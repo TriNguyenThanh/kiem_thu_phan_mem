@@ -145,6 +145,8 @@ allure generate reports/allure-results -o reports/allure-report --clean
 allure open reports/allure-report
 ```
 
+<div align="center" ><img src="resources/image.png"></img></div>
+
 ### 3. Chạy tự động với GitHub Actions
 
 Workflow `.github/workflows/ci.yml` chạy khi push, mở hoặc cập nhật pull request, và có thể chạy thủ công tại **Actions → UTC Login Tests → Run workflow**.
