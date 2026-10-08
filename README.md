@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧪 Kiểm Thử Tự Động Chức Năng Đăng Nhập — Văn Phòng Điện Tử UTC
+# Kiểm Thử Tự Động Chức Năng Đăng Nhập
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-4.20%2B-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
@@ -15,18 +15,18 @@ Kiểm thử tự động (Automation Testing) trang đăng nhập hệ thống 
 
 ---
 
-## 👨‍🎓 Thông Tin Sinh Viên
+## Thông Tin Sinh Viên
 
-| Thông tin                  | Chi tiết                                                                                                      |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------ |
-| **Họ và tên**              | **Nguyễn Thành Trí**                                                                                          |
-| **Mã số sinh viên (MSSV)** | **6451071079**                                                                                                |
-| **Học phần**               | Kiểm thử phần mềm                                                                                             |
-| **Đối tượng kiểm thử**     | [Văn phòng điện tử UTC](https://vanphongdientu.utc.edu.vn/Login?r=https%3A%2F%2Fvanphongdientu.utc.edu.vn%2F) |
+| Thông tin              | Chi tiết                                                                                                      |
+| :--------------------- | :------------------------------------------------------------------------------------------------------------ |
+| **Họ và tên**          | **Nguyễn Thành Trí**                                                                                          |
+| **Mã số sinh viên**    | **6451071079**                                                                                                |
+| **Học phần**           | Kiểm thử phần mềm                                                                                             |
+| **Đối tượng kiểm thử** | [Văn phòng điện tử UTC](https://vanphongdientu.utc.edu.vn/Login?r=https%3A%2F%2Fvanphongdientu.utc.edu.vn%2F) |
 
 ---
 
-## 📖 Giới Thiệu Dự Án
+## Giới Thiệu Dự Án
 
 Dự án xây dựng bộ kiểm thử tự động (**Automation Test Suite**) sử dụng **Python**, **Selenium WebDriver 4**, **Pytest** và **Allure Report (`allure-pytest`)** nhằm kiểm tra toàn diện chức năng **Đăng nhập** tại cổng [Văn phòng điện tử UTC](https://vanphongdientu.utc.edu.vn/Login?r=https%3A%2F%2Fvanphongdientu.utc.edu.vn%2F).
 
@@ -39,7 +39,7 @@ Dự án xây dựng bộ kiểm thử tự động (**Automation Test Suite**) 
 
 ---
 
-## 📂 Cấu Trúc Thư Mục
+## Cấu Trúc Thư Mục
 
 ```text
 kiem_thu_phan_mem/
@@ -84,7 +84,7 @@ kiem_thu_phan_mem/
 
 ---
 
-## ⚙️ Hướng Dẫn Cài Đặt & Thiết Lập (Setup)
+## Hướng Dẫn Cài Đặt & Thiết Lập (Setup)
 
 ### 1. Yêu cầu hệ thống
 
@@ -113,7 +113,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Hướng Dẫn Chạy Kiểm Thử & Xem Báo Cáo Allure
+## Hướng Dẫn Chạy Kiểm Thử & Xem Báo Cáo Allure
 
 Nhờ cấu hình sẵn `--alluredir=reports/allure-results --clean-alluredir` trong `pytest.ini`, mỗi lần chạy `pytest` dữ liệu báo cáo sẽ tự động được ghi vào thư mục `reports/allure-results/`.
 
@@ -165,7 +165,7 @@ allure serve allure-results
 
 ---
 
-## 📋 Danh Sách 20 Kịch Bản Kiểm Thử
+## Danh Sách 20 Kịch Bản Kiểm Thử
 
 |  Mã TC   | File Test            | Mô tả kịch bản                                               | Dữ liệu mẫu (`Username` / `Password`)   | Kỳ vọng                                                 |
 | :------: | :------------------- | :----------------------------------------------------------- | :-------------------------------------- | :------------------------------------------------------ |
