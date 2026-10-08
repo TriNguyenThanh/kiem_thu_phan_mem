@@ -1,0 +1,57 @@
+name: UTC Login Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Selenium tests (Python 3.12)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Verify Chrome and ChromeDriver
+        run: |
+          google-chrome --version
+          chromedriver --version
+
+      - name: Run all login tests in headless Chrome
+        timeout-minutes: 15
+        run: python -m pytest --headless --junitxml=reports/junit.xml
+
+      - name: Upload test reports and screenshots
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: utc-login-test-reports
+          path: |
+            reports/allure-results/
+            reports/junit.xml
+          if-no-files-found: warn
+          retention-days: 14

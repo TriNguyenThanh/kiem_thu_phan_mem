@@ -43,6 +43,8 @@ Dự án xây dựng bộ kiểm thử tự động (**Automation Test Suite**) 
 
 ```text
 kiem_thu_phan_mem/
+├── .github/
+│   └── workflows/ci.yml                   # GitHub Actions chạy Selenium và lưu báo cáo
 ├── pages/
 │   └── login_page.py                      # Page Object Model (UTCLoginPage) tích hợp @allure.step
 ├── resources/
@@ -141,6 +143,24 @@ allure generate reports/allure-results -o reports/allure-report --clean
 
 # Mở báo cáo HTML tĩnh đã xuất
 allure open reports/allure-report
+```
+
+### 3. Chạy tự động với GitHub Actions
+
+Workflow `.github/workflows/ci.yml` chạy khi push, mở hoặc cập nhật pull request, và có thể chạy thủ công tại **Actions → UTC Login Tests → Run workflow**.
+
+CI sử dụng Ubuntu 24.04, Python 3.12 và Chrome/ChromeDriver có sẵn trên runner. Sau khi cài `requirements.txt`, CI chạy đủ 20 test bằng lệnh:
+
+```bash
+python -m pytest --headless --junitxml=reports/junit.xml
+```
+
+Test dùng dữ liệu hardcode trong từng file test và truy cập website UTC thật. Kết quả phụ thuộc vào khả năng truy cập website và tính hợp lệ của tài khoản trong các kịch bản đăng nhập thành công; test thất bại sẽ khiến CI thất bại.
+
+Dữ liệu Allure (kèm ảnh chụp màn hình) và báo cáo JUnit được lưu trong artifact **utc-login-test-reports** trong 14 ngày, kể cả khi test thất bại. Tải artifact ở trang chi tiết lần chạy, giải nén rồi xem Allure bằng:
+
+```bash
+allure serve allure-results
 ```
 
 ---
