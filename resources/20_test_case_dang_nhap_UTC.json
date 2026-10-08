@@ -1,0 +1,330 @@
+[
+  {
+    "STT": 1,
+    "ID": "TC1",
+    "Description": "Để trống tên đăng nhập",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Click vào ô username và để trống.",
+      "Nhập dữ liệu vào ô password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "",
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Hiển thị thông báo \"Bạn chưa nhập tên đăng nhập\"."
+  },
+  {
+    "STT": 2,
+    "ID": "TC2",
+    "Description": "Để trống mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập dữ liệu vào ô username.",
+      "Để trống ô password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": ""
+    },
+    "Expected Output": "Hiển thị thông báo \"Bạn chưa nhập mật khẩu\"."
+  },
+  {
+    "STT": 3,
+    "ID": "TC3",
+    "Description": "Đúng tên đăng nhập, sai mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Hiển thị thông báo \"Tài khoản không đúng\"."
+  },
+  {
+    "STT": 4,
+    "ID": "TC4",
+    "Description": "Sai tên đăng nhập, đúng mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "user_invalid",
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Hiển thị thông báo \"Tài khoản không đúng\"."
+  },
+  {
+    "STT": 5,
+    "ID": "TC5",
+    "Description": "Đăng nhập thành công và chọn \"Giữ tôi luôn đăng nhập\"",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Tích chọn \"Giữ tôi luôn đăng nhập\".",
+      "Click nút Đăng nhập.",
+      "Tắt trình duyệt và mở lại.",
+      "Truy cập lại website."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc",
+      "Giữ tôi luôn đăng nhập": true
+    },
+    "Expected Output": "Đăng nhập thành công, chuyển đến trang chủ. Khi mở lại trình duyệt và truy cập website, trạng thái đăng nhập vẫn được duy trì theo chức năng ghi nhớ."
+  },
+  {
+    "STT": 6,
+    "ID": "TC6",
+    "Description": "Đăng nhập thành công và không chọn \"Giữ tôi luôn đăng nhập\"",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Không tích chọn \"Giữ tôi luôn đăng nhập\".",
+      "Click nút Đăng nhập.",
+      "Tắt trình duyệt và mở lại.",
+      "Truy cập lại website."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc",
+      "Giữ tôi luôn đăng nhập": false
+    },
+    "Expected Output": "Đăng nhập thành công, chuyển đến trang chủ. Sau khi mở lại trình duyệt, hiển thị trang đăng nhập theo yêu cầu của mẫu."
+  },
+  {
+    "STT": 7,
+    "ID": "TC7",
+    "Description": "Để trống cả tên đăng nhập và mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Không nhập thông tin vào hai ô.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "",
+      "Password": ""
+    },
+    "Expected Output": "Hiển thị thông báo yêu cầu nhập thông tin đăng nhập; không cho phép đăng nhập."
+  },
+  {
+    "STT": 8,
+    "ID": "TC8",
+    "Description": "Sai cả tên đăng nhập và mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "user_invalid",
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Hiển thị thông báo \"Tài khoản không đúng\"."
+  },
+  {
+    "STT": 9,
+    "ID": "TC9",
+    "Description": "Tên đăng nhập chỉ chứa khoảng trắng",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "   ",
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Không đăng nhập thành công. Hiển thị thông báo lỗi phù hợp."
+  },
+  {
+    "STT": 10,
+    "ID": "TC10",
+    "Description": "Mật khẩu chỉ chứa khoảng trắng",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "   "
+    },
+    "Expected Output": "Không đăng nhập thành công. Hiển thị thông báo lỗi phù hợp."
+  },
+  {
+    "STT": 11,
+    "ID": "TC11",
+    "Description": "Mật khẩu phân biệt chữ hoa và chữ thường",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password đã thay đổi chữ hoa/chữ thường so với mật khẩu đúng.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc (đổi chữ hoa/chữ thường)"
+    },
+    "Expected Output": "Hiển thị \"Tài khoản không đúng\" nếu mật khẩu không khớp chính xác."
+  },
+  {
+    "STT": 12,
+    "ID": "TC12",
+    "Description": "Đăng nhập bằng phím Enter",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Nhấn phím Enter."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc",
+      "Phím": "Enter"
+    },
+    "Expected Output": "Đăng nhập thành công và chuyển đến trang chủ."
+  },
+  {
+    "STT": 13,
+    "ID": "TC13",
+    "Description": "Kiểm tra chức năng che mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Click vào ô password.",
+      "Nhập password.",
+      "Quan sát nội dung ô password."
+    ],
+    "Giá trị": {
+      "Password": "123456@utc"
+    },
+    "Expected Output": "Mật khẩu được che bằng các ký tự thay thế, không hiển thị văn bản gốc."
+  },
+  {
+    "STT": 14,
+    "ID": "TC14",
+    "Description": "Tên đăng nhập không tồn tại",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "nonexistent_user_12345",
+      "Password": "123456"
+    },
+    "Expected Output": "Hiển thị thông báo \"Tài khoản không đúng\"."
+  },
+  {
+    "STT": 15,
+    "ID": "TC15",
+    "Description": "Nhập mật khẩu quá dài",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "Expected Output": "Đăng nhập thất bại. Hệ thống không bị treo hoặc phát sinh lỗi máy chủ."
+  },
+  {
+    "STT": 16,
+    "ID": "TC16",
+    "Description": "Kiểm tra chức năng quên mật khẩu",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Click vào liên kết \"Bạn quên mật khẩu đăng nhập?\".",
+      "Quan sát kết quả."
+    ],
+    "Giá trị": {
+      "Liên kết": "Bạn quên mật khẩu đăng nhập?"
+    },
+    "Expected Output": "Chuyển đến giao diện hoặc hướng dẫn khôi phục mật khẩu."
+  },
+  {
+    "STT": 17,
+    "ID": "TC17",
+    "Description": "Kiểm tra đăng nhập bằng e-mail UTC",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Click vào \"Đăng nhập bằng e-mail UTC\".",
+      "Quan sát kết quả."
+    ],
+    "Giá trị": {
+      "Phương thức": "E-mail UTC"
+    },
+    "Expected Output": "Chuyển đến quy trình xác thực bằng e-mail UTC."
+  },
+  {
+    "STT": 18,
+    "ID": "TC18",
+    "Description": "Làm mới trang sau khi đăng nhập",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập.",
+      "Nhấn F5 tại trang chủ."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc",
+      "Phím": "F5"
+    },
+    "Expected Output": "Trang được làm mới và vẫn duy trì phiên đăng nhập còn hiệu lực."
+  },
+  {
+    "STT": 19,
+    "ID": "TC19",
+    "Description": "Đăng xuất sau khi đăng nhập thành công",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập.",
+      "Click Đăng xuất.",
+      "Truy cập lại trang yêu cầu xác thực."
+    ],
+    "Giá trị": {
+      "Username": "huongnt",
+      "Password": "123456@utc",
+      "Thao tác": "Đăng xuất"
+    },
+    "Expected Output": "Kết thúc phiên đăng nhập. Yêu cầu xác thực lại khi truy cập trang được bảo vệ."
+  },
+  {
+    "STT": 20,
+    "ID": "TC20",
+    "Description": "Kiểm tra đăng nhập bằng SQL Injection",
+    "Steps": [
+      "Mở trang đăng nhập https://vanphongdientu.utc.edu.vn.",
+      "Nhập username.",
+      "Nhập password.",
+      "Click nút Đăng nhập."
+    ],
+    "Giá trị": {
+      "Username": "' OR '1'='1",
+      "Password": "123456"
+    },
+    "Expected Output": "Đăng nhập thất bại. Không cho phép bỏ qua xác thực hoặc tiết lộ thông tin cơ sở dữ liệu."
+  }
+]
